@@ -1,0 +1,10 @@
+[alias]
+	l = log --graph --pretty=format:'%Cred%h%Creset -%C(cyan)%d%Creset %s %C(yellow)[%cn]%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+	s = status -sb
+	d = diff --word-diff
+[push]
+	default = simple
+[filter "lfs"]
+	clean = git lfs clean %f
+	smudge = git lfs smudge %f
+	required = true
