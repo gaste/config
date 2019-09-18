@@ -1,7 +1,15 @@
+[log]
+	date = relative
 [alias]
-	l = log --graph --pretty=format:'%Cred%h%Creset -%C(cyan)%d%Creset %s %C(yellow)[%cn]%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+	l = log --graph --pretty=format:'%C(auto,red)%h%Creset -%C(auto,cyan)%d%Creset %s %C(auto,yellow)[%cN]%Creset %C(auto,green)(%ad)%Creset'
 	s = status -sb
 	d = diff --word-diff
+	ds = diff --stat
+	co = checkout
+	browse = !explorer `git config remote.origin.url`
+	k = !gitk --all
+	branch-name = !git rev-parse --abbrev-ref HEAD
+	publish = !git push -u origin $(git branch-name)
 [push]
 	default = simple
 [filter "lfs"]
